@@ -7,7 +7,22 @@ def sublists(lst):
     Returns: (list of list of values) list of all sublists of lst.
     """
 
-    pass
+    if lst == []:
+        return [[]]
+    else:  
+        list_of_sublist = []
+        val = [lst[0]]
+        lst_without_val = lst[1:]
+        sublists_without_val = sublists(lst_without_val)
+        print(sublists_without_val)
+        for sublist in sublists_without_val:
+            list_of_sublist.append(sublist)
+            true_sublist = val + sublist
+            list_of_sublist.append(true_sublist)
+        return list_of_sublist
+
+    
+
 
 
 #############################################################
